@@ -3,7 +3,7 @@ import Actions from "../actions/appActions";
 let initialState = {
   user: {},
   authToken: null,
-  isLogged: true
+  isLogged: false
 };
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
