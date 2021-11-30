@@ -5,6 +5,8 @@ import { AuthContext } from "../auth/AuthContext";
 import { PrivateRoutes, PublicRoutes } from "./routes";
 import Error404 from "@pages/Error404";
 import AppLoader from "@components/Loader/AppLoader";
+import PublicWrapper from "../hoc/PublicWrapper";
+import AuthWrapper from "../hoc/AuthWrapper";
 
 const Router = () => {
   const { isLogged } = useSelector((state) => state.app);
@@ -17,12 +19,12 @@ const Router = () => {
           <Redirect exact from="/" to="/u/dashboard" />
           {/* All the public routes */}
           {PublicRoutes.map((route) => (
-            <Route key={`Route-${route.path}`} {...route} />
+            <PublicWrapper key={`Route-${route.path}`} {...route} />
           ))}
 
           {/* All the private routes */}
           {PrivateRoutes.map((route) => (
-            <Route key={`Route-${route.path}`} {...route} />
+            <AuthWrapper key={`Route-${route.path}`} {...route} />
           ))}
 
           {/* 404 page route */}

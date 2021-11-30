@@ -8,7 +8,8 @@
       "@components/*": ["src/components/*"],
       "@helpers/*": ["src/helpers/*"],
       "@redux/*": ["src/redux/*"],
-      "@network/*": ["src/network/*"]
+      "@network/*": ["src/network/*"],
+      "@layouts/*": ["src/layout/*"]
     }
   },
   "exclude": ["node_modules", "public/build"]

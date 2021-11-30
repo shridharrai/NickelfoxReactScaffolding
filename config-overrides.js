@@ -9,7 +9,8 @@ module.exports = function (config, env) {
     "@components": resolve("src/components"),
     "@helpers": resolve("src/helpers"),
     "@redux": resolve("src/redux"),
-    "@network": resolve("src/network")
+    "@network": resolve("src/network"),
+    "@layouts": resolve("src/layout")
   });
 
   return config;
