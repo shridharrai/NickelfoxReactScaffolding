@@ -1,17 +1,15 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@router": ["./src/router"],
-        "@pages": ["./src/pages"],
-        "@pages/*": ["./src/pages/*"],
-        "@components": ["./src/components"],
-        "@components/*": ["./src/components/*"],
-        "@helpers": ["./src/helpers"],
-        "@helpers/*": ["./src/helpers/*"],
-        "@redux": ["./src/redux"]
-      }
-    },
-    "exclude": ["node_modules", "public/build"]
-  }
-  
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@router/*": ["src/router/*"],
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@redux/*": ["src/redux/*"],
+      "@network/*": ["src/network/*"]
+    }
+  },
+  "exclude": ["node_modules", "public/build"]
+}

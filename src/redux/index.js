@@ -1,7 +1,7 @@
 // Redux module
-import AppActions from "./actions/AppActions";
-import AppReducer from "./reducers/AppReducer";
-import Store, { Persistor } from "./store";
-import AppDispatcher from "./dispatchers/AppDispatcher";
+import AppActions from "./actions/appActions";
+import AppReducer from "./reducers/appReducer";
+import Store, { persistor } from "./store";
+import AppDispatcher from "./dispatchers/appDispatcher";
 
-export { AppActions, AppReducer, Store, Persistor, AppDispatcher };
+export { AppActions, AppReducer, Store, persistor, AppDispatcher };
