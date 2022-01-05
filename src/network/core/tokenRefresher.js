@@ -5,7 +5,7 @@
 
 import { API } from "./endpoints";
 import { ServerConfig } from "./serverConfig";
-import { AppDispatcher } from "@redux";
+import AppDispatcher from "@redux/dispatchers/appDispatcher";
 
 export async function refreshToken(refreshToken) {
   try {
@@ -14,7 +14,7 @@ export async function refreshToken(refreshToken) {
     const response = await fetch(url, {
       method,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ refreshToken }),
+      body: JSON.stringify({ refreshToken })
     }).then((res) => res.json());
     if (response.success) {
       AppDispatcher.updateUserTokens(response.data);

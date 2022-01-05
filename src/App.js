@@ -2,9 +2,9 @@ import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import AppRouter from "./router";
-import { Store, persistor } from "@redux";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { defaultTheme } from "./themes/defaultTheme";
+import store, { persistor } from "@redux/store";
 
 /**
  * @description Check if browser is Safar
@@ -21,7 +21,7 @@ function App() {
   const currentTheme = createTheme(defaultTheme);
 
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <PersistGate persistor={persistor}>
         <ThemeProvider theme={currentTheme}>
           <AppRouter />

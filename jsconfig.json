@@ -9,7 +9,9 @@
       "@helpers/*": ["src/helpers/*"],
       "@redux/*": ["src/redux/*"],
       "@network/*": ["src/network/*"],
-      "@layouts/*": ["src/layout/*"]
+      "@layouts/*": ["src/layout/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@icons/*": ["src/assets/icons/*"]
     }
   },
   "exclude": ["node_modules", "public/build"]
