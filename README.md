@@ -1,4 +1,4 @@
-# New Document# Getting started with NFX React Web Boilerplate
+# Getting started with NFX React Web Boilerplate
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
