@@ -46,8 +46,9 @@ export class NetworkManager {
         method: this.method
       };
 
-      if (header && state.token) {
+      if (header && state.authToken) {
         this.headers.token = state.token ?? "";
+        // this.headers["Authorization"] = `Bearer ${state.token}` ?? "";
       }
 
       this.headers["Accept-Language"] = "en";
