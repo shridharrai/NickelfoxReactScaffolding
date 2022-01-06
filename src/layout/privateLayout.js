@@ -15,8 +15,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import { DashboardMenus } from "router/routes/dashboardRoutes";
+import { useHistory } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -67,6 +67,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function PrivateLayout({ children }) {
   const theme = useTheme();
+  const history = useHistory();
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
@@ -75,6 +76,10 @@ export default function PrivateLayout({ children }) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const navigate = (route) => {
+    history.push(route);
   };
 
   return (
@@ -90,8 +95,8 @@ export default function PrivateLayout({ children }) {
             sx={{ mr: 2, ...(open && { display: "none" }) }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+          <Typography variant="h5" noWrap component="div">
+            React Scaffolding
           </Typography>
         </Toolbar>
       </AppBar>
@@ -118,23 +123,13 @@ export default function PrivateLayout({ children }) {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+          {DashboardMenus.map((item) => (
+            <ListItem
+              button
+              key={item.alias}
+              onClick={() => navigate(item.route)}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.title} />
             </ListItem>
           ))}
         </List>
