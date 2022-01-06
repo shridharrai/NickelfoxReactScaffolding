@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import OnboardingBg from "@images/backgrounds/eugene-golovesov-nr5zYqe0uiQ-unsplash.jpg";
+import OnboardingBg from "assets/images/backgrounds/eugene-golovesov-nr5zYqe0uiQ-unsplash.jpg";
 
 export default function PublicLayout({ children }) {
   return (

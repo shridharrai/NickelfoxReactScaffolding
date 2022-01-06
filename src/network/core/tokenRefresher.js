@@ -5,7 +5,7 @@
 
 import { API } from "./endpoints";
 import { ServerConfig } from "./serverConfig";
-import AppDispatcher from "@redux/dispatchers/appDispatcher";
+import AppDispatcher from "redux/dispatchers/appDispatcher";
 
 export async function refreshToken(refreshToken) {
   try {

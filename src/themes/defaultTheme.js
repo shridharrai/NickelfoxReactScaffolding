@@ -79,6 +79,6 @@ export const defaultTheme = {
       fontWeight: 600
     }
   },
-  shadows: ["none", "none"],
+  shadows: ["1", "2", "3", "4", "none"],
   overrides: {}
 };

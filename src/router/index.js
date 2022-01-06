@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext";
 import { PrivateRoutes, PublicRoutes } from "./routes";
-import Error404 from "@pages/Error404";
-import AppLoader from "@components/Loader/AppLoader";
+import Error404 from "pages/Error404";
+import AppLoader from "components/Loader/AppLoader";
 import PublicWrapper from "../hoc/PublicWrapper";
 import AuthWrapper from "../hoc/AuthWrapper";
 

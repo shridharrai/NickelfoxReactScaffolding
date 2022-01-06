@@ -1,5 +1,5 @@
 // Higher Order Class to make all network calls
-import store from "@redux/store";
+import store from "redux/store";
 import { HTTP_METHODS } from "./HttpMethods";
 import { ServerConfig } from "./ServerConfig";
 import { Response } from "./ResponseParser";
