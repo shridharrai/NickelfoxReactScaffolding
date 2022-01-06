@@ -1,4 +1,4 @@
-# Getting started with NFX React Web Boilerplate
+# New Document# Getting started with NFX React Web Boilerplate
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -50,12 +50,20 @@ This boilerplate is created in the interest of developers to make the basic deve
  ┃ ┣ 📜manifest.json
  ┃ ┗ 📜robots.txt
  ┣ 📂src
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂fonts
+ ┃ ┃ ┣ 📂icons
+ ┃ ┃ ┗ 📂images
+ ┃ ┃ ┃ ┣ 📂backgrounds
+ ┃ ┃ ┃ ┃ ┗ 📜eugene-golovesov-nr5zYqe0uiQ-unsplash.jpg
+ ┃ ┃ ┃ ┗ 📂placeholders
+ ┃ ┃ ┃ ┃ ┗ 📜onboardingng.jpg
  ┃ ┣ 📂auth
  ┃ ┃ ┗ 📜AuthContext.js
  ┃ ┣ 📂components
  ┃ ┃ ┣ 📂Loader
  ┃ ┃ ┃ ┗ 📜AppLoader.js
- ┃ ┃ ┗ 📂Typography
+ ┃ ┃ ┗ 📂typography
  ┃ ┃ ┃ ┗ 📜index.js
  ┃ ┣ 📂helpers
  ┃ ┃ ┣ 📂__tests__
@@ -85,7 +93,6 @@ This boilerplate is created in the interest of developers to make the basic deve
  ┃ ┃ ┣ 📜index.js
  ┃ ┃ ┗ 📜package.json
  ┃ ┣ 📂pages
- ┃ ┃ ┣ 📂common
  ┃ ┃ ┣ 📂private
  ┃ ┃ ┃ ┣ 📂dashboard
  ┃ ┃ ┃ ┃ ┗ 📜index.js
@@ -106,11 +113,10 @@ This boilerplate is created in the interest of developers to make the basic deve
  ┃ ┃ ┃ ┗ 📜appDispatcher.js
  ┃ ┃ ┣ 📂reducers
  ┃ ┃ ┃ ┗ 📜appReducer.js
- ┃ ┃ ┣ 📜index.js
- ┃ ┃ ┣ 📜package.json
  ┃ ┃ ┗ 📜store.js
  ┃ ┣ 📂router
  ┃ ┃ ┣ 📂routes
+ ┃ ┃ ┃ ┣ 📜dashboardRoutes.js
  ┃ ┃ ┃ ┣ 📜index.js
  ┃ ┃ ┃ ┣ 📜privateRoutes.js
  ┃ ┃ ┃ ┗ 📜publicRoutes.js
@@ -126,6 +132,7 @@ This boilerplate is created in the interest of developers to make the basic deve
  ┃ ┣ 📜logo.svg
  ┃ ┣ 📜reportWebVitals.js
  ┃ ┗ 📜setupTests.js
+ ┣ 📜.DS_Store
  ┣ 📜.env
  ┣ 📜.env.dev
  ┣ 📜.env.prod
@@ -135,8 +142,6 @@ This boilerplate is created in the interest of developers to make the basic deve
  ┣ 📜.gitignore
  ┣ 📜.prettierrc
  ┣ 📜README.md
- ┣ 📜babel.config.js
- ┣ 📜config-overrides.js
  ┣ 📜jest.config.js
  ┣ 📜jsconfig.json
  ┣ 📜package-lock.json
@@ -156,20 +161,20 @@ This boilerplate is created in the interest of developers to make the basic deve
 
 ## Imports
 
-All the imports in this project are being managed by [react-app-rewired](https://www.npmjs.com/package/react-app-rewired). The config file for this plugin is `config-overrides.js` located at the root of the project.
+All the imports in this project are being managed by `jsconfig.json`. The config file can be found at root of the project.
 
 ### How to import modules
 
-To import modules, just place `@` before the name of directory followed by the file name.
+To import modules, just start the import path by directory name followed by the file name.
 For example, If I want to import `AppLoader` from `src/components/Loader/AppLoader.js` then the import would look like
 
 ```js
-import AppLoader from "@components/Loader/AppLoader";
+import AppLoader from "components/Loader/AppLoader";
 ```
 
 You need not to write long import paths for most of the times.
 
-**If you need to add any other directory in this import, add the path to `config-overrides.js` and in `jsconfig.json`**
+**You can create as many as directories in the project and those would be available as absolute import above**
 
 ## Some other important points
 
