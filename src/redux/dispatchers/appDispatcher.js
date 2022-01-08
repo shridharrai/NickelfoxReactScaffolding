@@ -5,7 +5,7 @@ import Actions from "../actions/appActions";
 
 const AppDispatcher = {
   setUserLoggedIn: (data) => {
-    Stores.dispatch({ type: Actions.SET_TOKEN, data: data.tokens });
+    Stores.dispatch({ type: Actions.SET_TOKEN, data: data.token });
     Stores.dispatch({ type: Actions.LOGIN, data: data.user });
   },
   setUserLoggedOut: () => {
