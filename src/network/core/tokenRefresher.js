@@ -4,7 +4,7 @@
  */
 
 import { API } from "./endpoints";
-import { ServerConfig } from "./serverConfig";
+import { ServerConfig } from "./ServerConfig";
 import AppDispatcher from "redux/dispatchers/appDispatcher";
 
 export async function refreshToken(refreshToken) {
@@ -23,7 +23,8 @@ export async function refreshToken(refreshToken) {
     }
   } catch (err) {
     console.log(err);
-  } finally {
+  } 
+  // finally {
     return;
-  }
+  // }
 }

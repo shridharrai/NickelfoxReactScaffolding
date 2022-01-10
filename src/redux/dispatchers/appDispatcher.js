@@ -11,6 +11,10 @@ const AppDispatcher = {
   setUserLoggedOut: () => {
     Stores.dispatch({ type: Actions.LOGOUT });
   },
+  setUserSignUp: (data) => {
+    Stores.dispatch({ type: Actions.SET_TOKEN, data: data.token });
+    Stores.dispatch({ type: Actions.SIGNUP, data: data.user });
+  },
   updateUserTokens: (data) => {
     Stores.dispatch({ type: Actions.SET_TOKEN, data });
   },
