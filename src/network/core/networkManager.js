@@ -21,7 +21,7 @@ import { refreshToken } from "./TokenRefresher";
 
 export class NetworkManager {
   constructor(endpoint, body = {}, params = {} | []) {
-    this.baseUrl = ServerConfig.API_URL;
+    this.baseUrl = ServerConfig.FIREBASE_API_URL;
     this.endpoint = endpoint.endpoint;
     this.method = endpoint.method;
     this.endPointVersion = endpoint.version;
@@ -62,14 +62,14 @@ export class NetworkManager {
       const res = await fetch(url, options);
       const response = await res.json();
 
-      data = response.data;
-      success = response.success;
-      code = response.status_code;
+      data = response;
+      success = res.ok;
+      code = res.status;
       error = response.error;
 
       if (code === 401) {
         // refresh the token
-        await refreshToken(state.token);
+        await refreshToken(state.refreshToken);
         // pass the control back to network manager
         const refRes = await this.httpRequest(header);
         // re-assign response
@@ -86,10 +86,11 @@ export class NetworkManager {
       // Catch all errors
       console.log("err ", err);
       // display error
-    } finally {
-      // Return whatever is executed and processed
-      return new Response(success, data, error, code);
     }
+    // finally {
+    // Return whatever is executed and processed
+    return new Response(success, data, error, code);
+    // }
   };
 
   get requestParams() {

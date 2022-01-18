@@ -1,7 +1,7 @@
 // List all endpoints here
 // @ts-check
 import { Endpoint } from "./apiModel";
-import { HTTP_METHODS } from "./httpMethods";
+import { HTTP_METHODS } from "./HttpMethods";
 
 // ******************
 // Endpoint class takes 3 params in constructor ==> "endpoint", "http-method", "API-version"
@@ -9,7 +9,9 @@ import { HTTP_METHODS } from "./httpMethods";
 // ******************
 export const API = {
   AUTH: {
-    LOGIN: new Endpoint("/auth/", HTTP_METHODS.POST)
+    LOGIN: new Endpoint("/auth/", HTTP_METHODS.POST),
+    FIREBASELOGIN: new Endpoint("/accounts:signInWithPassword", HTTP_METHODS.POST),
+    FIREBASESIGNUP: new Endpoint("/accounts:signUp", HTTP_METHODS.POST)
   },
   ORDERS: {
     LIST: new Endpoint("/orders_list", HTTP_METHODS.GET),
