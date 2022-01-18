@@ -9,12 +9,16 @@ const SignUp = () => {
   const history = useHistory();
 
   const userLogin = async (values) => {
-    console.log(values)
-    const res = await AuthService.SignUpByFirebase({...values, returnSecureToken: true})
-    console.log("UserLogin", res);
-    if(res.success) {
+    const res = await AuthService.SignUpByFirebase({
+      ...values,
+      returnSecureToken: true
+    });
+    if (res.success) {
       AppDispatcher.setUserSignUp({
-        token: {authToken: res.data.idToken, refreshToken: res.data.refreshToken},
+        token: {
+          authToken: res.data.idToken,
+          refreshToken: res.data.refreshToken
+        },
         user: { email: res.data.email, uid: res.data.localId }
       });
       history.push("/u/dashboard");
@@ -25,9 +29,7 @@ const SignUp = () => {
   return (
     <React.Fragment>
       <Typography variant="h3">New User!</Typography>
-      <Typography variant="subtitle">
-        Create Account
-      </Typography>
+      <Typography variant="subtitle">Create Account</Typography>
       <Grid container spacing={2}>
         <Divider />
         <Formik

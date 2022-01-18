@@ -60,9 +60,7 @@ export class NetworkManager {
 
       // execute fetch call & parse json response
       const res = await fetch(url, options);
-      console.log("res is", res);
       const response = await res.json();
-      console.log(response);
 
       data = response;
       success = res.ok;
@@ -88,10 +86,10 @@ export class NetworkManager {
       // Catch all errors
       console.log("err ", err);
       // display error
-    } 
+    }
     // finally {
-      // Return whatever is executed and processed
-      return new Response(success, data, error, code);
+    // Return whatever is executed and processed
+    return new Response(success, data, error, code);
     // }
   };
 
@@ -113,7 +111,6 @@ export class NetworkManager {
     } else {
       // do nothing
     }
-    console.log("param is ", param)
     return param;
   }
 }

@@ -9,12 +9,16 @@ const Login = () => {
   const history = useHistory();
 
   const userLogin = async (values) => {
-    console.log(values)
-    const res = await AuthService.loginByFirebase({...values, returnSecureToken: true})
-    console.log("UserLogin", res);
-    if(res.success) {
+    const res = await AuthService.loginByFirebase({
+      ...values,
+      returnSecureToken: true
+    });
+    if (res.success) {
       AppDispatcher.setUserLoggedIn({
-        token: {authToken: res.data.idToken, refreshToken: res.data.refreshToken},
+        token: {
+          authToken: res.data.idToken,
+          refreshToken: res.data.refreshToken
+        },
         user: { email: res.data.email, uid: res.data.localId }
       });
       history.push("/u/dashboard");
